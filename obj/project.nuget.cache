@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MSpfhoYPQzGuVALgIY5/GaV/jLY/WpYPBstw/auSbhVvlJOIQ2e+gF1xv9sTYtZv9AsMe9QHOyEQsweOPkkvYw==",
+  "dgSpecHash": "Qcd/z/vzSBgt2YTkHFUzalhpIYAOHHy+Ph+R+p6aJBAeiN4H75t3tKQ+42sJ3t7FLx4829Fnqn9ZnnA5ABFtbw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\G\\source\\repos\\HotelMVC2\\HotelMVC2.csproj",
+  "projectFilePath": "C:\\Users\\G\\source\\repos\\HotelMVC2\\HotelMVC2\\HotelMVC2\\HotelMVC2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\G\\.nuget\\packages\\microsoft.aspnetcore\\2.1.7\\microsoft.aspnetcore.2.1.7.nupkg.sha512",
     "C:\\Users\\G\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.1.1\\microsoft.aspnetcore.antiforgery.2.1.1.nupkg.sha512",

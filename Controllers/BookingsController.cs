@@ -14,7 +14,7 @@ namespace HotelMVC2.Controllers
     public class BookingsController : Controller
     {
         private readonly HotelBookingContext _context;
-
+        public int YearToDisplayGlobal;
         public BookingsController()
         {
             // Create database context
@@ -25,13 +25,26 @@ namespace HotelMVC2.Controllers
 
         }
 
+        public ActionResult  Button_onclick(int RoomsButton,int? id)
+        {
+            if (id == null)
+                ViewBag.YearToDisplay = YearToDisplayGlobal;
+            var rooms = _context.Room.ToArray();
+            ViewBag.Rooms = rooms;
+
+
+            return View("Index");
+        }
+
+        
+
         // GET: Bookings
         public async Task<IActionResult> Index(int? id, int? roomId)
         {
 
             var rooms = _context.Room.ToArray();
             ViewBag.Rooms = rooms;
-
+            var RoomID = roomId;
 
             var bookings = _context.Booking.Include(b => b.Customer).Include(b => b.Room);
 
@@ -51,19 +64,38 @@ namespace HotelMVC2.Controllers
             {
                 for (DateTime d = minBookingDate; d <= maxBookingDate; d = d.AddDays(1))
                 {
-
-                    var noOfBookings = from b in _context.Booking
-                                       where b.IsActive && d >= b.StartDate && d <= b.EndDate
-                                       select b;
-                    if (noOfBookings.Count() != 0)
+                    if (roomId == null)
                     {
-                        fullyOccupiedDates.Add(d);
+                        var noOfBookings = from b in _context.Booking
+                                           where b.IsActive && d >= b.StartDate && d <= b.EndDate
+                                           select b;
+                        if (noOfBookings.Count() != 0)
+                        {
+                            fullyOccupiedDates.Add(d);
 
+                        }
+                        else
+                        {
+                            var a = 1;
+                        }
                     }
                     else
                     {
-                        var a = 1;
+                        var noOfBookings = from b in _context.Booking
+                                           where b.IsActive && b.Id == roomId
+                                           && d >= b.StartDate && d <= b.EndDate
+                                           select b;
+                        if (noOfBookings.Count() != 0)
+                        {
+                            fullyOccupiedDates.Add(d);
+
+                        }
+                        else
+                        {
+                            var a = 1;
+                        }
                     }
+
                 }
             }
 
@@ -79,7 +111,10 @@ namespace HotelMVC2.Controllers
                 id = maxBookingYear;
 
             ViewBag.YearToDisplay = id;
-
+            if (id != null)
+            {
+                YearToDisplayGlobal =(int) id;
+            }
             return View(await bookings.ToListAsync());
         }
 

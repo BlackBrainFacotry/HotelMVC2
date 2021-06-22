@@ -8655,11 +8655,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\G\\source\\repos\\HotelMVC2\\HotelMVC2.csproj",
+      "projectUniqueName": "C:\\Users\\G\\source\\repos\\HotelMVC2\\HotelMVC2\\HotelMVC2\\HotelMVC2.csproj",
       "projectName": "HotelMVC2",
-      "projectPath": "C:\\Users\\G\\source\\repos\\HotelMVC2\\HotelMVC2.csproj",
+      "projectPath": "C:\\Users\\G\\source\\repos\\HotelMVC2\\HotelMVC2\\HotelMVC2\\HotelMVC2.csproj",
       "packagesPath": "C:\\Users\\G\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\G\\source\\repos\\HotelMVC2\\obj\\",
+      "outputPath": "C:\\Users\\G\\source\\repos\\HotelMVC2\\HotelMVC2\\HotelMVC2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

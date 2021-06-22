@@ -24,9 +24,12 @@
             @foreach (var item in ViewBag.Rooms)
             {
             <th>
-                <button name="RoomIdButton" asp-action="Index" onclick="">
+                @using (Html.BeginForm("Index", "Bookings"))
+                {
+                <button name="roomId"   value="@item.Id">
                     @item.Id
                 </button>
+                }
             </th>
             }
         </th>
