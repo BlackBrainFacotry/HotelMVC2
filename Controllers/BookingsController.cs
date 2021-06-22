@@ -44,7 +44,7 @@ namespace HotelMVC2.Controllers
 
             var rooms = _context.Room.ToArray();
             ViewBag.Rooms = rooms;
-            var RoomID = roomId;
+           
 
             var bookings = _context.Booking.Include(b => b.Customer).Include(b => b.Room);
 

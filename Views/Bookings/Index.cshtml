@@ -20,17 +20,30 @@
 @*Calender display*@
 <table class="table">
     <tr>
-        <th>Rooms
-            @foreach (var item in ViewBag.Rooms)
+        <th>
+            Rooms
+            @using (Html.BeginForm("Index", "Bookings"))
             {
-            <th>
-                @using (Html.BeginForm("Index", "Bookings"))
+                @foreach (var item in ViewBag.Rooms)
                 {
-                <button name="roomId"   value="@item.Id">
-                    @item.Id
-                </button>
+                     <th>
+                    
+                            <button name="roomId" value="@item.Id">
+                                @item.Id
+                            </button>
+                        
+                    
+                    </th>
                 }
-            </th>
+                    <th>
+                    
+                            <button name="roomId" value="Null">
+                                ALL
+                            </button>
+                        
+                    
+                    </th>
+                    
             }
         </th>
     </tr>
