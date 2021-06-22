@@ -25,16 +25,7 @@ namespace HotelMVC2.Controllers
 
         }
 
-        public ActionResult  Button_onclick(int RoomsButton,int? id)
-        {
-            if (id == null)
-                ViewBag.YearToDisplay = YearToDisplayGlobal;
-            var rooms = _context.Room.ToArray();
-            ViewBag.Rooms = rooms;
-
-
-            return View("Index");
-        }
+       
 
         
 
@@ -54,7 +45,7 @@ namespace HotelMVC2.Controllers
             var bookingEndDates = bookings.Select(b => b.EndDate);
             DateTime maxBookingDate = bookingEndDates.Any() ? bookingEndDates.Max() : DateTime.MaxValue;
 
-
+            ViewBag.FullyOccupiedDates = null;
             List<DateTime> fullyOccupiedDates = new List<DateTime>();
 
             int noOfRooms = _context.Room.Count();
@@ -111,10 +102,14 @@ namespace HotelMVC2.Controllers
                 id = maxBookingYear;
 
             ViewBag.YearToDisplay = id;
+
+
             if (id != null)
             {
                 YearToDisplayGlobal =(int) id;
             }
+
+
             return View(await bookings.ToListAsync());
         }
 
