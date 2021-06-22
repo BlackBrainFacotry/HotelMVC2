@@ -102,25 +102,51 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @if (ViewBag.roomId != null)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsActive)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Customer.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Room.Id)
-                </td>
-            </tr>
+            @foreach (var item in Model.Where(x => x.Room.Id == ViewBag.roomId))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Room.Id)
+                    </td>
+                </tr>
+            }
+        }
+        @if (ViewBag.roomId == null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Room.Id)
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>

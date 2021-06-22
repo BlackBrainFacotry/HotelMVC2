@@ -17,12 +17,13 @@ namespace HotelMVC2.Controllers
         public int YearToDisplayGlobal;
         public BookingsController()
         {
-            // Create database context
-            var options = new DbContextOptionsBuilder<HotelBookingContext>()
-                .UseInMemoryDatabase("HotelBookingDb")
-                .Options;
-            _context = new HotelBookingContext(options);
-
+           
+                // Create database context
+                var options = new DbContextOptionsBuilder<HotelBookingContext>()
+                    .UseInMemoryDatabase("HotelBookingDb")
+                    .Options;
+                _context = new HotelBookingContext(options);
+           
         }
 
        
@@ -32,10 +33,10 @@ namespace HotelMVC2.Controllers
         // GET: Bookings
         public async Task<IActionResult> Index(int? id, int? roomId)
         {
-
+            var xx = Request.Query.ToList();
             var rooms = _context.Room.ToArray();
             ViewBag.Rooms = rooms;
-           
+            ViewBag.roomId = roomId;
 
             var bookings = _context.Booking.Include(b => b.Customer).Include(b => b.Room);
 
