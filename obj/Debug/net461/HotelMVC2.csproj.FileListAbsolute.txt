@@ -718,3 +718,5 @@ C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\System.Xm
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\System.Xml.XPath.XDocument.dll
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\obj\Debug\net461\HotelMVC2.Views.pdb
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\obj\Debug\net461\HotelMVC2.csproj.CopyComplete
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\AjaxControlToolkit.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\DotNet.Highcharts.dll

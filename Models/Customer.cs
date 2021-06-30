@@ -8,5 +8,7 @@ namespace HotelMVC2.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public virtual List<Booking> Bookings { get; set; }
+
+        public int BookingsCount { get; set; }
     }
 }

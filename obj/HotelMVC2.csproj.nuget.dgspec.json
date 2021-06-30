@@ -44,6 +44,18 @@
         "net461": {
           "targetAlias": "net461",
           "dependencies": {
+            "AjaxControlToolkit": {
+              "target": "Package",
+              "version": "[20.1.0, )"
+            },
+            "Chart.js": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            },
+            "DotNet.Highcharts": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
             "Microsoft.AspNetCore": {
               "target": "Package",
               "version": "[2.1.7, )"
@@ -64,6 +76,10 @@
               "target": "Package",
               "version": "[2.1.1, )"
             },
+            "Microsoft.Chart.Controls": {
+              "target": "Package",
+              "version": "[4.7.2046, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[2.1.0, )"
@@ -71,6 +87,10 @@
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[2.1.0, )"
+            },
+            "Microsoft.jQuery.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[3.2.6, )"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"

@@ -2,15 +2,17 @@
 using HotelMVC2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System;
 
 namespace HotelMVC2.Controllers
 {
     public class CustomersController : Controller
     {
         private readonly HotelBookingContext _context;
-
+        List<int> salmons = new List<int>();
         public CustomersController()
         {
             // Create database context
@@ -18,11 +20,20 @@ namespace HotelMVC2.Controllers
                 .UseInMemoryDatabase("HotelBookingDb")
                 .Options;
             _context = new HotelBookingContext(options);
+            
         }
 
         // GET: Customers
         public async Task<IActionResult> Index()
         {
+
+            foreach (var customer in _context.Customer.ToList())
+            {
+                var countofreservation = from b in _context.Booking where b.CustomerId == customer.Id select b;
+                customer.BookingsCount = countofreservation.Count();
+                salmons.Add(countofreservation.Count());
+            }
+            ViewBag.ReservationsCustomer = salmons;
             return View(await _context.Customer.ToListAsync());
         }
 

@@ -23,7 +23,7 @@ namespace HotelMVC2.Controllers
                     .UseInMemoryDatabase("HotelBookingDb")
                     .Options;
                 _context = new HotelBookingContext(options);
-           
+             //  List<Booking> list_of_bookings = _context.
         }
 
        
