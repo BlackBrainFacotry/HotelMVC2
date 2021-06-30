@@ -720,3 +720,4 @@ C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\obj\Debug\net461\HotelMVC2
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\obj\Debug\net461\HotelMVC2.csproj.CopyComplete
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\AjaxControlToolkit.dll
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\DotNet.Highcharts.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\ChartJSCore.dll

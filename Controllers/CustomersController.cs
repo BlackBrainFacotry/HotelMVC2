@@ -5,14 +5,18 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System;
-
+using ChartJSCore.Models;
+using ChartJSCore.Helpers;
+using System.Linq;
+using Microsoft.Extensions.Configuration;
+using System.Threading.Tasks;
 namespace HotelMVC2.Controllers
 {
     public class CustomersController : Controller
     {
         private readonly HotelBookingContext _context;
-        List<int> salmons = new List<int>();
+        List<double?> salmons = new List<double?>();
+        List<string> customersID = new List<string>();
         public CustomersController()
         {
             // Create database context
@@ -31,9 +35,51 @@ namespace HotelMVC2.Controllers
             {
                 var countofreservation = from b in _context.Booking where b.CustomerId == customer.Id select b;
                 customer.BookingsCount = countofreservation.Count();
-                salmons.Add(countofreservation.Count());
+                salmons.Add((double)countofreservation.Count());
+                customersID.Add((customer.Id).ToString());
             }
             ViewBag.ReservationsCustomer = salmons;
+
+            Chart chart = new Chart();
+
+            chart.Type = Enums.ChartType.Line;
+
+            ChartJSCore.Models.Data data = new ChartJSCore.Models.Data();
+            data.Labels = customersID;
+
+            BarDataset dataset = new BarDataset()
+            {
+                Label = "# of Votes",
+                Data = salmons,
+                BackgroundColor = new List<ChartColor>
+                {
+                    ChartColor.FromRgba(255, 99, 132, 0.2),
+                    ChartColor.FromRgba(54, 162, 235, 0.2),
+                    ChartColor.FromRgba(255, 206, 86, 0.2),
+                    ChartColor.FromRgba(75, 192, 192, 0.2),
+                    ChartColor.FromRgba(153, 102, 255, 0.2),
+                    ChartColor.FromRgba(255, 159, 64, 0.2)
+                },
+                BorderColor = new List<ChartColor>
+                {
+                    ChartColor.FromRgb(255, 99, 132),
+                    ChartColor.FromRgb(54, 162, 235),
+                    ChartColor.FromRgb(255, 206, 86),
+                    ChartColor.FromRgb(75, 192, 192),
+                    ChartColor.FromRgb(153, 102, 255),
+                    ChartColor.FromRgb(255, 159, 64)
+                },
+                BorderWidth = new List<int>() { 1 }
+            };
+
+            data.Datasets = new List<Dataset>();
+            data.Datasets.Add(dataset);
+
+            chart.Data = data;
+
+            ViewData["chart"] = chart;
+
+
             return View(await _context.Customer.ToListAsync());
         }
 

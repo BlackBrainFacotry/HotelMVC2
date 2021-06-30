@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Zv78Y/5F4tNgvUDE3yFmipaqOdTiZ63qVib3m3gkmmJBO4jajd/mnfRTHtsCI1Ja42rrhPdVhnUJc+h1GQKNyQ==",
+  "dgSpecHash": "wZUmmLxOIO1d2F6sC63+JodXFj+/Ws/AGcrppMcFbdSytzgv2Cvu5pSwPNAonArp4vifET5MhnbS2phexLzHiw==",
   "success": true,
   "projectFilePath": "C:\\Users\\G\\source\\repos\\HotelMVC2\\HotelMVC2\\HotelMVC2\\HotelMVC2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\G\\.nuget\\packages\\ajaxcontroltoolkit\\20.1.0\\ajaxcontroltoolkit.20.1.0.nupkg.sha512",
     "C:\\Users\\G\\.nuget\\packages\\chart.js\\2.9.3\\chart.js.2.9.3.nupkg.sha512",
+    "C:\\Users\\G\\.nuget\\packages\\chartjscore\\1.5.8\\chartjscore.1.5.8.nupkg.sha512",
     "C:\\Users\\G\\.nuget\\packages\\dotnet.highcharts\\4.0.0\\dotnet.highcharts.4.0.0.nupkg.sha512",
     "C:\\Users\\G\\.nuget\\packages\\jquery\\1.8.0\\jquery.1.8.0.nupkg.sha512",
     "C:\\Users\\G\\.nuget\\packages\\microsoft.aspnetcore\\2.1.7\\microsoft.aspnetcore.2.1.7.nupkg.sha512",

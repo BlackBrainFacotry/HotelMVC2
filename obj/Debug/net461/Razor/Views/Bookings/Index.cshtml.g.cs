@@ -67,7 +67,7 @@ using HotelMVC2.Models;
             WriteLiteral("\r\n<h2>Bookings</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(250, 37, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17b74bebb8f34be183951b751b58640c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6745bc895f749a18a1511d05a4187ce", async() => {
                 BeginContext(273, 10, true);
                 WriteLiteral("Create New");
                 EndContext();
@@ -89,7 +89,7 @@ using HotelMVC2.Models;
             WriteLiteral("\r\n</p>\r\n<p>\r\n    ");
             EndContext();
             BeginContext(304, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a6bc2f4fe5e4656ade3f08c568f4542", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af4a2c4a07c04da5a28e7d4178d3907e", async() => {
                 BeginContext(351, 9, true);
                 WriteLiteral("Next year");
                 EndContext();
@@ -124,7 +124,7 @@ using HotelMVC2.Models;
             WriteLiteral("\r\n    ");
             EndContext();
             BeginContext(370, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd3e54f80b4d44d497033e91006e4e79", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f138ddbb8b84badb7b8997224cdb2a7", async() => {
                 BeginContext(417, 13, true);
                 WriteLiteral("Previous year");
                 EndContext();

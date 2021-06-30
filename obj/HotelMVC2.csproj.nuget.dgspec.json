@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[2.9.3, )"
             },
+            "ChartJSCore": {
+              "target": "Package",
+              "version": "[1.5.8, )"
+            },
             "DotNet.Highcharts": {
               "target": "Package",
               "version": "[4.0.0, )"
