@@ -49,16 +49,16 @@ namespace HotelMVC2.Controllers
 
             BarDataset dataset = new BarDataset()
             {
-                Label = "# of Votes",
+                Label = "Ranking pracowników",
                 Data = salmons,
                 BackgroundColor = new List<ChartColor>
                 {
-                    ChartColor.FromRgba(255, 99, 132, 0.2),
-                    ChartColor.FromRgba(54, 162, 235, 0.2),
-                    ChartColor.FromRgba(255, 206, 86, 0.2),
-                    ChartColor.FromRgba(75, 192, 192, 0.2),
-                    ChartColor.FromRgba(153, 102, 255, 0.2),
-                    ChartColor.FromRgba(255, 159, 64, 0.2)
+                    ChartColor.FromRgba(255, 99, 132, 1),
+                    ChartColor.FromRgba(54, 162, 235, 1),
+                    ChartColor.FromRgba(255, 206, 86, 1),
+                    ChartColor.FromRgba(75, 192, 192, 1),
+                    ChartColor.FromRgba(153, 102, 255, 1),
+                    ChartColor.FromRgba(255, 159, 64, 1)
                 },
                 BorderColor = new List<ChartColor>
                 {

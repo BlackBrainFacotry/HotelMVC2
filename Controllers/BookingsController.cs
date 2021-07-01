@@ -170,6 +170,8 @@ namespace HotelMVC2.Controllers
                         endDate < b.StartDate || startDate > b.EndDate && endDate > b.EndDate))
                     {
                         roomId = room.Id;
+                       
+                        
                         break;
                     }
                 }
