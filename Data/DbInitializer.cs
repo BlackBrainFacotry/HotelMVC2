@@ -42,7 +42,25 @@ namespace HotelMVC2.Data
             {
                 new Booking { StartDate=date, EndDate=date.AddDays(1), IsActive=true, CustomerId=1, RoomId=1 },
                 new Booking { StartDate=date.AddDays(1), EndDate=date.AddDays(5), IsActive=true, CustomerId=2, RoomId=2 },
-                new Booking { StartDate=date.AddDays(7), EndDate=date.AddDays(14), IsActive=true, CustomerId=1, RoomId=3 }
+                new Booking { StartDate=date.AddDays(7), EndDate=date.AddDays(14), IsActive=true, CustomerId=1, RoomId=3 },
+                new Booking { StartDate=date.AddDays(10), EndDate=date.AddDays(15), IsActive=true, CustomerId=2, RoomId=2 },
+                new Booking { StartDate=date.AddDays(17), EndDate=date.AddDays(24), IsActive=true, CustomerId=1, RoomId=3 },
+                    new Booking { StartDate=date.AddDays(10), EndDate=date.AddDays(11), IsActive=true, CustomerId=1, RoomId=1 },
+                new Booking { StartDate=date.AddDays(30), EndDate=date.AddDays(35), IsActive=true, CustomerId=2, RoomId=2 },
+                new Booking { StartDate=date.AddDays(37), EndDate=date.AddDays(44), IsActive=true, CustomerId=1, RoomId=3 },
+                new Booking { StartDate=date.AddDays(30), EndDate=date.AddDays(45), IsActive=true, CustomerId=2, RoomId=2 },
+                new Booking { StartDate=date.AddDays(37), EndDate=date.AddDays(44), IsActive=true, CustomerId=1, RoomId=3 },
+                    new Booking { StartDate=date.AddDays(50), EndDate=date.AddDays(51), IsActive=true, CustomerId=1, RoomId=1 },
+                new Booking { StartDate=date.AddDays(51), EndDate=date.AddDays(55), IsActive=true, CustomerId=2, RoomId=2 },
+                new Booking { StartDate=date.AddDays(57), EndDate=date.AddDays(64), IsActive=true, CustomerId=1, RoomId=3 },
+                new Booking { StartDate=date.AddDays(50), EndDate=date.AddDays(65), IsActive=true, CustomerId=2, RoomId=2 },
+                new Booking { StartDate=date.AddDays(67), EndDate=date.AddDays(74), IsActive=true, CustomerId=1, RoomId=3 },
+                    new Booking { StartDate=date.AddDays(80), EndDate=date.AddDays(81), IsActive=true, CustomerId=1, RoomId=1 },
+                new Booking { StartDate=date.AddDays(71), EndDate=date.AddDays(75), IsActive=true, CustomerId=2, RoomId=2 },
+                new Booking { StartDate=date.AddDays(77), EndDate=date.AddDays(84), IsActive=true, CustomerId=1, RoomId=3 },
+                new Booking { StartDate=date.AddDays(70), EndDate=date.AddDays(85), IsActive=true, CustomerId=2, RoomId=2 },
+                new Booking { StartDate=date.AddDays(77), EndDate=date.AddDays(84), IsActive=true, CustomerId=1, RoomId=3 }
+
             };
 
             context.Customer.AddRange(customers);

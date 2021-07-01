@@ -58,6 +58,7 @@ namespace HotelMVC2.Controllers
                 {
                     if (roomId == null)
                     {
+                        var dada = _context.Booking;
                         var noOfBookings = from b in _context.Booking
                                            where b.IsActive && d >= b.StartDate && d <= b.EndDate
                                            select b;
@@ -74,7 +75,7 @@ namespace HotelMVC2.Controllers
                     else
                     {
                         var noOfBookings = from b in _context.Booking
-                                           where b.IsActive && b.Id == roomId
+                                           where b.IsActive && b.RoomId == roomId
                                            && d >= b.StartDate && d <= b.EndDate
                                            select b;
                         if (noOfBookings.Count() != 0)
