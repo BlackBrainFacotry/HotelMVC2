@@ -6,17 +6,31 @@
    
     List<DateTime> fullyOccupiedDates = (List<DateTime>)ViewBag.FullyOccupiedDates;
 }
+<div class="Bartpol" >
+    <div >
+        <h2>Bookings</h2>
 
-<h2>Bookings</h2>
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <p>
+            <a asp-action="Index" asp-route-id="@(year+1)">Next year</a>
+            <a asp-action="Index" asp-route-id="@(year-1)">Previous year</a>
+        </p>
+    </div>
+    <div>
+        <div><canvas id="lineChart"></canvas></div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<p>
-    <a asp-action="Index" asp-route-id="@(year+1)">Next year</a>
-    <a asp-action="Index" asp-route-id="@(year-1)">Previous year</a>
-</p>
+        @{ChartJSCore.Models.Chart chart = (ChartJSCore.Models.Chart)ViewData["chart"]; }
 
+        @section Scripts {
+            <script src="~/lib/Chart.js/dist/Chart.js"></script>
+            <script>
+        @Html.Raw(chart.CreateChartCode("lineChart"));
+            </script>
+        }
+    </div>
+</div>
 @*Calender display*@
 <table class="table">
     <tr>

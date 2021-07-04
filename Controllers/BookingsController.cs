@@ -7,6 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChartJSCore.Models;
+using ChartJSCore.Helpers;
+using Microsoft.Extensions.Configuration;
 
 
 namespace HotelMVC2.Controllers
@@ -15,6 +18,10 @@ namespace HotelMVC2.Controllers
     {
         private readonly HotelBookingContext _context;
         public int YearToDisplayGlobal;
+        List<string> roomsID = new List<string>();
+        List<double?> daysinyearDouble = new List<double?>();
+        List<int> daysinyearInt = new List<int>();
+        
         public BookingsController()
         {
            
@@ -35,8 +42,17 @@ namespace HotelMVC2.Controllers
         {
             var xx = Request.Query.ToList();
             var rooms = _context.Room.ToArray();
+            var roomslist =await _context.Room.ToListAsync();
             ViewBag.Rooms = rooms;
             ViewBag.roomId = roomId;
+
+            foreach( var item in roomslist)
+            {
+                roomsID.Add((item.Id).ToString());
+                daysinyearInt.Add(0);
+                daysinyearDouble.Add(0.0);
+            }
+
 
             var bookings = _context.Booking.Include(b => b.Customer).Include(b => b.Room);
 
@@ -89,7 +105,31 @@ namespace HotelMVC2.Controllers
                         }
                     }
 
+
+
+
+                    foreach(var item in roomslist)
+                    {
+                        var noOfBookings = from b in _context.Booking
+                                           where b.IsActive && b.RoomId == item.Id
+                                           && d >= b.StartDate && d <= b.EndDate
+                                           select b;
+                        if (noOfBookings.Count() != 0)
+                        {
+                            daysinyearInt[item.Id-1]++;
+                            
+                        }
+                        else
+                        {
+                            var a = 1;
+                        }
+                    }
                 }
+            }
+
+            foreach(var item in rooms)
+            {
+                daysinyearDouble[item.Id-1] = (double?)daysinyearInt[item.Id-1];
             }
 
             ViewBag.FullyOccupiedDates = fullyOccupiedDates;
@@ -110,6 +150,47 @@ namespace HotelMVC2.Controllers
             {
                 YearToDisplayGlobal =(int) id;
             }
+
+            
+
+            Chart chart = new Chart();
+
+            chart.Type = Enums.ChartType.Line;
+
+            ChartJSCore.Models.Data data = new ChartJSCore.Models.Data();
+            data.Labels = roomsID;
+
+            BarDataset dataset = new BarDataset()
+            {
+                Label = "ilosc zajętych dni",
+                Data = daysinyearDouble,
+                BackgroundColor = new List<ChartColor>
+                {
+                    ChartColor.FromRgba(255, 99, 132, 1),
+                    ChartColor.FromRgba(54, 162, 235, 1),
+                    ChartColor.FromRgba(255, 206, 86, 1),
+                    ChartColor.FromRgba(75, 192, 192, 1),
+                    ChartColor.FromRgba(153, 102, 255, 1),
+                    ChartColor.FromRgba(255, 159, 64, 1)
+                },
+                BorderColor = new List<ChartColor>
+                {
+                    ChartColor.FromRgb(255, 99, 132),
+                    ChartColor.FromRgb(54, 162, 235),
+                    ChartColor.FromRgb(255, 206, 86),
+                    ChartColor.FromRgb(75, 192, 192),
+                    ChartColor.FromRgb(153, 102, 255),
+                    ChartColor.FromRgb(255, 159, 64)
+                },
+                BorderWidth = new List<int>() { 1 }
+            };
+
+            data.Datasets = new List<Dataset>();
+            data.Datasets.Add(dataset);
+
+            chart.Data = data;
+
+            ViewData["chart"] = chart;
 
 
             return View(await bookings.ToListAsync());
