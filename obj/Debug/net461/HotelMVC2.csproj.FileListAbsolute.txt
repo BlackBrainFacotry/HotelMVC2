@@ -721,3 +721,15 @@ C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\obj\Debug\net461\HotelMVC2
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\AjaxControlToolkit.dll
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\DotNet.Highcharts.dll
 C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\ChartJSCore.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\x86\e_sqlite3.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\x64\e_sqlite3.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\Microsoft.Data.Sqlite.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\SQLitePCLRaw.batteries_green.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\SQLitePCLRaw.batteries_v2.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\SQLitePCLRaw.core.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\System.Data.SqlClient.dll
+C:\Users\G\source\repos\HotelMVC2\HotelMVC2\HotelMVC2\bin\Debug\net461\e_sqlite3.dll

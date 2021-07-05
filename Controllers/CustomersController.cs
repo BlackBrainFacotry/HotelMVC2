@@ -17,13 +17,11 @@ namespace HotelMVC2.Controllers
         private readonly HotelBookingContext _context;
         List<double?> salmons = new List<double?>();
         List<string> customersID = new List<string>();
-        public CustomersController()
+        public CustomersController(HotelBookingContext context)
         {
             // Create database context
-            var options = new DbContextOptionsBuilder<HotelBookingContext>()
-                .UseInMemoryDatabase("HotelBookingDb")
-                .Options;
-            _context = new HotelBookingContext(options);
+            
+            _context = context;
             
         }
 

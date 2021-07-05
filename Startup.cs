@@ -30,7 +30,9 @@ namespace HotelMVC2
             public void ConfigureServices(IServiceCollection services)
             {
                 services.AddMvc();
-            }
+                services.AddDbContext<HotelBookingContext>(options =>
+                    options.UseSqlite("Data Source=HotelBookingDb.db"));
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         [Obsolete]
@@ -42,11 +44,11 @@ namespace HotelMVC2
                     //app.UseBrowserLink();
 
                     // Seed the database
-                    var options = new DbContextOptionsBuilder<HotelBookingContext>()
-                        .UseInMemoryDatabase("HotelBookingDb")
-                        .Options;
-                    var dbContext = new HotelBookingContext(options);
-                    DbInitializer.Initialize(dbContext);
+                    //var options = new DbContextOptionsBuilder<HotelBookingContext>()
+                    //    .UseInMemoryDatabase("HotelBookingDb")
+                    //    .Options;
+                    //var dbContext = new HotelBookingContext(options);
+                    //DbInitializer.Initialize(dbContext);
                 }
                 else
                 {

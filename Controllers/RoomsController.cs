@@ -11,13 +11,11 @@ namespace HotelMVC2.Controllers
     {
         private readonly HotelBookingContext _context;
 
-        public RoomsController()
+        public RoomsController(HotelBookingContext context)
         {
             // Create database context
-            var options = new DbContextOptionsBuilder<HotelBookingContext>()
-                .UseInMemoryDatabase("HotelBookingDb")
-                .Options;
-            _context = new HotelBookingContext(options);
+            
+            _context = context;
         }
 
         // GET: Rooms

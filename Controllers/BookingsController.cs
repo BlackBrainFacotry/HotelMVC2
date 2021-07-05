@@ -22,14 +22,12 @@ namespace HotelMVC2.Controllers
         List<double?> daysinyearDouble = new List<double?>();
         List<int> daysinyearInt = new List<int>();
         
-        public BookingsController()
+        public BookingsController(HotelBookingContext context)
         {
            
                 // Create database context
-                var options = new DbContextOptionsBuilder<HotelBookingContext>()
-                    .UseInMemoryDatabase("HotelBookingDb")
-                    .Options;
-                _context = new HotelBookingContext(options);
+               
+                _context =context;
              //  List<Booking> list_of_bookings = _context.
         }
 
